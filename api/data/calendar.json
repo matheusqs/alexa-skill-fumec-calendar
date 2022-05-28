@@ -4,12 +4,12 @@
       {
         "id": "2155e7ae-2aeb-4607-9a4b-2db7ee157f82",
         "name": "INTERNET DAS COISAS - IoT",
-        "weekDay": "0"
+        "weekDay": "1"
       },
       {
         "id": "7574e6e8-3503-45eb-aa7a-d712da8b0aaa",
         "name": "ENGENHARIA DE SOFTWARE I",
-        "weekDay": "0"
+        "weekDay": "1"
       },
       {
         "id": "d2a79c87-ae56-4b80-adc4-abd7e92b2b16",
@@ -24,22 +24,22 @@
       {
         "id": "b1e1591b-1f18-4100-b844-9b4e020986c2",
         "name": "INTERNET DAS COISAS - IoT",
-        "weekDay": "5"
+        "weekDay": "3"
       },
       {
         "id": "80da7ae7-1a60-4b96-80f0-4547399da409",
         "name": "BUSINESS INTELLIGENCE E BIG DATA",
-        "weekDay": "5"
+        "weekDay": "3"
       },
       {
         "id": "5c5a7a2f-75d6-4bcb-b471-44d557ac3465",
         "name": "INTELIGÊNCIA ARTIFICIAL",
-        "weekDay": "6"
+        "weekDay": "4"
       },
       {
         "id": "a34eac57-5d46-4c2a-b670-7e4f6bf3948d",
         "name": "ENGENHARIA DE SOFTWARE I",
-        "weekDay": "6"
+        "weekDay": "4"
       }
     ]
   }
