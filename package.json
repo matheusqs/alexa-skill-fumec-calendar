@@ -1,0 +1,25 @@
+{
+  "name": "skill-alexa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "config": "^3.3.7",
+    "consign": "^0.1.6",
+    "express": "^4.18.1"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
