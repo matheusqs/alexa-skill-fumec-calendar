@@ -127,6 +127,265 @@ const CalendarTomorrowIntentHandler = {
   },
 };
 
+const CalendarSundayIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "CalendarSundayIntent"
+    );
+  },
+  async handle(handlerInput) {
+    let speakOutput = "";
+
+    await getRemoteData(
+      "https://pacific-scrubland-71842.herokuapp.com/api/v1/calendar/weekDay?weekDay=sunday"
+    )
+      .then((response) => {
+        const result = JSON.parse(response);
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de domingo é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula aos domingos.";
+        }
+      })
+      .catch((err) => {
+        //set an optional error message here
+        //outputSpeech = err.message;
+      });
+
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const CalendarMondayIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "CalendarMondayIntent"
+    );
+  },
+  async handle(handlerInput) {
+    let speakOutput = "";
+
+    await getRemoteData(
+      "https://pacific-scrubland-71842.herokuapp.com/api/v1/calendar/weekDay?weekDay"
+    )
+      .then((response) => {
+        const result = JSON.parse(response);
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de segunda é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula às segundas.";
+        }
+      })
+      .catch((err) => {
+        //set an optional error message here
+        //outputSpeech = err.message;
+      });
+
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const CalendarTuesdayIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "CalendarTuesdayIntent"
+    );
+  },
+  async handle(handlerInput) {
+    let speakOutput = "";
+
+    await getRemoteData(
+      "https://pacific-scrubland-71842.herokuapp.com/api/v1/calendar/weekDay?weekDay=tuesday"
+    )
+      .then((response) => {
+        const result = JSON.parse(response);
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de terça é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula às terças";
+        }
+      })
+      .catch((err) => {
+        //set an optional error message here
+        //outputSpeech = err.message;
+      });
+
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const CalendarWednesdayIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "CalendarWednesdayIntent"
+    );
+  },
+  async handle(handlerInput) {
+    let speakOutput = "";
+
+    await getRemoteData(
+      "https://pacific-scrubland-71842.herokuapp.com/api/v1/calendar/weekDay?weekDay=wednesday"
+    )
+      .then((response) => {
+        const result = JSON.parse(response);
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de quarta é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula às quartas";
+        }
+      })
+      .catch((err) => {
+        //set an optional error message here
+        //outputSpeech = err.message;
+      });
+
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const CalendarThursdayIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "CalendarThursdayIntent"
+    );
+  },
+  async handle(handlerInput) {
+    let speakOutput = "";
+
+    await getRemoteData(
+      "https://pacific-scrubland-71842.herokuapp.com/api/v1/calendar/weekDay?weekDay=thursday"
+    )
+      .then((response) => {
+        const result = JSON.parse(response);
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de quinta é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula às quintas";
+        }
+      })
+      .catch((err) => {
+        //set an optional error message here
+        //outputSpeech = err.message;
+      });
+
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const CalendarFridayIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "CalendarFridayIntent"
+    );
+  },
+  async handle(handlerInput) {
+    let speakOutput = "";
+
+    await getRemoteData(
+      "https://pacific-scrubland-71842.herokuapp.com/api/v1/calendar/weekDay?weekDay=friday"
+    )
+      .then((response) => {
+        const result = JSON.parse(response);
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de sexta é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula às sextas";
+        }
+      })
+      .catch((err) => {
+        //set an optional error message here
+        //outputSpeech = err.message;
+      });
+
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
+const CalendarSaturdayIntentHandler = {
+  canHandle(handlerInput) {
+    return (
+      Alexa.getRequestType(handlerInput.requestEnvelope) === "IntentRequest" &&
+      Alexa.getIntentName(handlerInput.requestEnvelope) ===
+        "CalendarSaturdayIntent"
+    );
+  },
+  async handle(handlerInput) {
+    let speakOutput = "";
+
+    await getRemoteData(
+      "https://pacific-scrubland-71842.herokuapp.com/api/v1/calendar/weekDay?weekDay=saturday"
+    )
+      .then((response) => {
+        const result = JSON.parse(response);
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de sábado é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula aos sábados.";
+        }
+      })
+      .catch((err) => {
+        //set an optional error message here
+        //outputSpeech = err.message;
+      });
+
+    return (
+      handlerInput.responseBuilder
+        .speak(speakOutput)
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse()
+    );
+  },
+};
+
 const HelpIntentHandler = {
   canHandle(handlerInput) {
     return (
@@ -272,6 +531,13 @@ exports.handler = Alexa.SkillBuilders.custom()
     CalendarYesterdayIntentHandler,
     CalendarTodayIntentHandler,
     CalendarTomorrowIntentHandler,
+    CalendarSundayIntentHandler,
+    CalendarMondayIntentHandler,
+    CalendarTuesdayIntentHandler,
+    CalendarWednesdayIntentHandler,
+    CalendarThursdayIntentHandler,
+    CalendarFridayIntentHandler,
+    CalendarSaturdayIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     FallbackIntentHandler,
