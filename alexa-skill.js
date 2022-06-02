@@ -32,7 +32,12 @@ const CalendarYesterdayIntentHandler = {
     )
       .then((response) => {
         const result = JSON.parse(response);
-        speakOutput = `Sua primeira aula de ontem foi ${result.data[0].name} e a sua segunda foi ${result.data[1].name}`;
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de ontem foi ${result.data[0].name} às ${result.data[0].startTime} e acabou às ${result.data[0].finishTime}. A sua segunda foi ${result.data[1].name} às ${result.data[1].startTime} e acabou às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não houve aula ontem.";
+        }
       })
       .catch((err) => {
         //set an optional error message here
@@ -64,7 +69,12 @@ const CalendarTodayIntentHandler = {
     )
       .then((response) => {
         const result = JSON.parse(response);
-        speakOutput = `Sua primeira aula de hoje é ${result.data[0].name} e a sua segunda é ${result.data[1].name}`;
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de hoje é ${result.data[0].name} às ${result.data[0].startTime} e vai acabar às ${result.data[0].finishTime}. A sua segunda é ${result.data[1].name} às ${result.data[1].startTime} e vai acabar às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não há aula hoje.";
+        }
       })
       .catch((err) => {
         //set an optional error message here
@@ -96,7 +106,12 @@ const CalendarTomorrowIntentHandler = {
     )
       .then((response) => {
         const result = JSON.parse(response);
-        speakOutput = `Sua primeira aula de amanhã é ${result.data[0].name} e a sua segunda é ${result.data[1].name}`;
+
+        if (result.data.length) {
+          speakOutput = `Sua primeira aula de amanhã será ${result.data[0].name} às ${result.data[0].startTime} e acabará às ${result.data[0].finishTime}. A sua segunda será ${result.data[1].name} às ${result.data[1].startTime} e acabará às ${result.data[1].finishTime}`;
+        } else {
+          speakOutput = "Não haverá aula amanhã.";
+        }
       })
       .catch((err) => {
         //set an optional error message here
@@ -159,7 +174,7 @@ const FallbackIntentHandler = {
     );
   },
   handle(handlerInput) {
-    const speakOutput = "Sorry, I don't know about that. Please try again.";
+    const speakOutput = "Não entendi. Pode repetir?";
 
     return handlerInput.responseBuilder
       .speak(speakOutput)
